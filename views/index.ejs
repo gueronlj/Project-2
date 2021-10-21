@@ -11,8 +11,8 @@
       </header>
       <div class="landing">
          <%if (currentUser) {%>
-            <a href="/lfs/request">Reserve a Chef</a>
-            <a href="/lfs/dashboard/<%=currentUser%>">Check my reservations</a>
+            <a class="btn" href="/lfs/request">Reserve a Chef</a>
+            <a class="btn" href="/lfs/dashboard/<%=currentUser%>">Check my reservations</a>
          <%} else{%>
             <p><a href="/users/registration">Register</a> to reserve a chef today. Or <a href="/sessions/login">sign-in</a></p>
          <%}%>

@@ -29,6 +29,7 @@ flex-direction: row;
 
 a {
    text-decoration: none;
+   color: blue;
 }
 .main {
    display: flex;
@@ -42,6 +43,11 @@ a {
 .landing {
    text-align: center;
    border-bottom: 1px solid black;
+}
+
+.landing .btn{
+   margin: 1em;
+   color: blue;
 }
 
 .content h1 {
