@@ -1,0 +1,19 @@
+   <div class="brandname">
+      <h1>Sushi Supply</h1>
+   </div>
+   <nav>
+      <ul>
+         <% if (currentUser){%>
+            <li>
+               <form class="button" action="/sessions/logout?_method=DELETE" method="post">
+                  <input type="submit" name="" value="Sign-out">
+               </form>
+            </li>
+            <%} else {%>
+               <li>
+                  <a href="/sessions/login">Log in</a>
+               </li>
+               <li><a href="/users/registration">Register</a></li>
+            <%}%>
+      </ul>
+   </nav>

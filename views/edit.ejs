@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
+      <link rel="stylesheet" href="/css/main.css">
       <title></title>
    </head>
    <body>
@@ -11,7 +12,7 @@
       </header>
       <div class="main">
          <div class="content">
-            <form class="reservation" action="/lfs/request/<%=request._id%>?_method=PUT" method="post">
+            <form class="request" action="/lfs/request/<%=request._id%>?_method=PUT" method="post">
                <label for="name">Name</label>
                <input type="text" name="name" value="">
                <label for="date">Date</label>
@@ -25,7 +26,7 @@
                <br>
                <input type="submit" name="" value="Submit">
             </form>
-            <form class="" action="/lfs/request/<%=request._id%>?_method=DELETE" method="post">
+            <form  action="/lfs/request/<%=request._id%>?_method=DELETE" method="post">
                <input type="submit" name="" value="Cancel Reservation">
             </form>
          </div>

@@ -3,19 +3,27 @@
    <head>
       <meta charset="utf-8">
       <title></title>
+      <link rel="stylesheet" href="/css/main.css">
    </head>
    <body>
-      <div class="content">
-         <h1>Register</h1>
-         <form class="signup" action="/users" method="post">
-            <label for="username">Username</label>
-            <input type="text" name="username">
-            <label for="password">Password</label>
-            <input type="password" name="password">
-            <label for="email">e-mail</label>
-            <input type="email" name="email">
-            <input type="submit" name="" value="Register">
-         </form>
+      <header>
+         <%- include ('./partials/header.ejs') %>
+      </header>
+      <div class="main">
+         <%- include ('./partials/side-menu.ejs') %>
+         <div class="content">
+            <h1>Register</h1>
+            <form class="signup" action="/users" method="post">
+               <label for="username">Username</label>
+               <input type="text" name="username">
+               <label for="password">Password</label>
+               <input type="password" name="password">
+               <label for="email">e-mail</label>
+               <input type="email" name="email">
+               <input type="submit" name="" value="Register">
+            </form>
+            <a href="/lfs">Back</a>
+         </div>
       </div>
    </body>
 </html>

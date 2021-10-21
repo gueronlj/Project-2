@@ -3,14 +3,29 @@
    <head>
       <meta charset="utf-8">
       <title>Your reservations</title>
+      <link rel="stylesheet" href="/css/main.css">
    </head>
    <body>
-      <div class="content">
-         <% for (let i = 0; i<requests.length; i++){ %>
-               <a href='/lfs/request/<%=requests[i]._id%>'> <%= requests[i].name %> </a>
-               <a href="/lfs/request/edit/<%=requests[i]._id%>">Change Plans</a>
-         <% } %>
+      <header>
+         <%- include ('./partials/header.ejs') %>
+      </header>
+      <div class="main">
+         <%- include ('./partials/side-menu.ejs') %>
+         <div class="content">
+            <h3>Your reservations</h3>
+            <div class="dashboard">
+               <% for (let i = 0; i<requests.length; i++){ %>
+                  <div class="reservation">
+                     <p><%= requests[i].date %></p>
+                     <a href='/lfs/request/<%=requests[i]._id%>'> <%= requests[i].name %> </a>
+                     <a  class="button" href="/lfs/request/edit/<%=requests[i]._id%>">Change Plans</a>
+                  </div>
+               <% } %>
+               <div class="reservation">
+                  <a class="button" id="back" href="/lfs">Back</a>
+               </div>
+            </div>
+         </div>
       </div>
-      <a href="/lfs">Back</a>
    </body>
 </html>

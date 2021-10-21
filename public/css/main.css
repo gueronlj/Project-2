@@ -1,0 +1,100 @@
+*{
+   font-family: Helvetica;
+}
+
+header {
+   display: flex;
+   flex-direction: row;
+   align-items: baseline;
+   justify-content: space-between;
+   border-bottom: 1px solid black;
+}
+
+ul {
+   list-style-type: none;
+   padding-inline-start: 0;
+}
+
+
+header li {
+   display: inline;
+   margin-left: .5em;
+   margin-right: .5em;
+}
+
+header ul{
+display: flex;
+flex-direction: row;
+}
+
+a {
+   text-decoration: none;
+}
+.main {
+   display: flex;
+   flex-direction: row;
+}
+
+.side-menu {
+   margin-right: 2%;
+}
+
+.landing {
+   text-align: center;
+   border-bottom: 1px solid black;
+}
+
+.content h1 {
+   text-align: center;
+}
+
+.content{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   flex-grow: 3;
+}
+
+.request{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.request, .signup{
+   display: flex;
+   flex-direction: column;
+}
+
+
+.signup{
+   width: 15em;
+}
+
+.reservation{
+   display: flex;
+   align-self: center;
+   align-items: baseline;
+   justify-content: flex-end;
+}
+
+.reservation a, .reservation p{
+   margin: 1em;
+}
+
+.details{
+   display:flex;
+   flex-direction: row;
+}
+
+.details div{
+   margin: 1em;
+}
+
+.details h4{
+   margin-bottom: .2em;
+}
+
+.details p{
+   margin-top: .4em;
+}
