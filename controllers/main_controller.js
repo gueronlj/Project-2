@@ -11,14 +11,14 @@ module.exports = lfs
 //       res.redirect('/sessions/new')
 //    }
 // }
-//----------------------------remove------------------
+//----------------------------remove reservation------------------
 lfs.delete('/request/:id', (req, res) => {
    Request.findByIdAndRemove(req.params.id, (error, foundRequest) => {
       res.redirect('/lfs')
    })
 })
 
-//----------------------------edit----------------------------
+//----------------------------edit reservation----------------------------
 lfs.put('/request/:id', (req, res) => {
    Request.findByIdAndUpdate(req.params.id, req.body,
       (error, updated) => {
@@ -33,16 +33,17 @@ lfs.get('/request/edit/:id', (req, res) => {
       })
    })
 })
-//---------------------show----------------------
+//---------------------show details----------------------
 lfs.get('/request/:id', (req, res) => {
    Request.findById(req.params.id, (error, foundRequest) => {
       res.render('menu.ejs', {
-         request: foundRequest
+         request: foundRequest,
+         currentUser: req.session.currentUser
       })
    })
 })
 
-//-----------------------create---------------------------
+//-----------------------make reservation---------------------------
 lfs.post('/', (req, res) => {
    Request.create(req.body, (error, newRequest) => {
       res.redirect('/lfs')
@@ -50,7 +51,7 @@ lfs.post('/', (req, res) => {
 })
 
 lfs.get('/request', (req, res) => {
-   res.render('request.ejs')
+   res.render('request.ejs', { currentUser: req.session.currentUser })
 })
 
 //------------------------seed-----------------------------
@@ -76,7 +77,8 @@ lfs.get('/seed', (req, res) => {
 lfs.get('/', (req, res) => {
    Request.find({}, (error, data) => {
       res.render('index.ejs', {
-         requests: data
+         requests: data,
+         currentUser: req.session.currentUser
       })
    })
 })

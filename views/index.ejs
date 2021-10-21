@@ -10,8 +10,19 @@
             <h1>Sushi Supply</h1>
             <nav>
                <ul>
-                  <li>Log in</li>
-                  <li>Sign-up</li>
+                  <% if (currentUser){%>
+                     <li>
+                        <form class="button" action="/sessions/logout?_method=DELETE" method="post">
+                           <input type="submit" name="" value="Sign-out">
+                        </form>
+                     </li>
+                     <%} else {%>
+                        <li>
+                           <a href="/sessions/login">Log in</a>
+                        </li>
+                     <%}%>
+                  <li>
+                     <a href="/users/registration">Register</a></li>
                </ul>
             </nav>
          </div>
