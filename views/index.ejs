@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+      <header>
+         <div class="brandname">
+            <h1>Sushi Supply</h1>
+            <nav>
+               <ul>
+                  <li>Log in</li>
+                  <li>Sign-up</li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <div class="landing">
+      </div>
+      <div class="main">
+         <div class="side-menu">
+            <ul>
+               <li>Stuff</li>
+               <li>Doohikies</li>
+               <li>Things</li>
+               <li>Watchacallits</li>
+               <li>Dingdads</li>
+               <li>Thingamajig</li>
+            </ul>
+         </div>
+         <div class="content">
+            <h1>Content here</h1>
+            <div class="menu">
+               <a href="/lfs/request">Reserve a Chef</a>
+            </div>
+            <% for (let i = 0; i<requests.length; i++){ %>
+                  <a href='/lfs/request/<%=requests[i]._id%>'> <%= requests[i].name %> </a>
+                  <a href="/lfs/request/edit/<%=requests[i]._id%>">Change Plans</a>
+            <% } %>
+         </div>
+      </div>
+   </body>
+</html>
