@@ -33,18 +33,34 @@ lfs.get('/request/edit/:id', (req, res) => {
       })
    })
 })
-//---------------------show details----------------------
+//------------------------------show details----------------------
 lfs.get('/request/:id', (req, res) => {
    Request.findById(req.params.id, (error, foundRequest) => {
-      res.render('menu.ejs', {
+      res.render('show.ejs', {
          request: foundRequest,
          currentUser: req.session.currentUser
       })
    })
 })
 
+//-----------------------------show user's stuff------------------------
+
+lfs.get('/dashboard/:username', (req, res) => {
+   Request.find({user:req.session.currentUser}, (error, foundRequests) => {
+      if (error){
+         res.send('Please log-in. <a href"/lfs>Back</a>"')
+      } else{
+         res.render('userdash.ejs', {
+            requests: foundRequests,
+            currentUser: req.session.currentUser//****maybe not needed.***
+         })
+      }
+   })
+})
+
 //-----------------------make reservation---------------------------
 lfs.post('/', (req, res) => {
+   req.body.user = req.session.currentUser//add username to their reservation.
    Request.create(req.body, (error, newRequest) => {
       res.redirect('/lfs')
    })

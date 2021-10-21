@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Your reservations</title>
+   </head>
+   <body>
+      <div class="content">
+         <% for (let i = 0; i<requests.length; i++){ %>
+               <a href='/lfs/request/<%=requests[i]._id%>'> <%= requests[i].name %> </a>
+               <a href="/lfs/request/edit/<%=requests[i]._id%>">Change Plans</a>
+         <% } %>
+      </div>
+      <a href="/lfs">Back</a>
+   </body>
+</html>
