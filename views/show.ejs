@@ -58,7 +58,6 @@
                      <h4>Number of guests</h3>
                      <p><%= request.guests%></p>
                      <a href="/lfs/request/edit/<%=request._id%>">Edit</a>
-
                   </div>
                </div>
                <%if (currentUser) {%>
@@ -66,7 +65,6 @@
                <%}else {%>
                   <a href="/lfs<%= request.user%>">Back</a>
                <%}%>
-
          </div>
       </div>
    </body>

@@ -25,6 +25,7 @@ header li {
 header ul{
 display: flex;
 flex-direction: row;
+align-items: center;
 }
 
 a {
@@ -41,8 +42,12 @@ a {
 }
 
 .landing {
-   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    border-bottom: 1px solid black;
+   padding-bottom: 1em;
 }
 
 .landing .btn{
@@ -70,6 +75,7 @@ a {
 .request, .signup{
    display: flex;
    flex-direction: column;
+   margin-bottom: 1em;
 }
 
 

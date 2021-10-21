@@ -9,18 +9,21 @@
       <header>
          <%- include ('./partials/header.ejs') %>
       </header>
+      <div class="landing">
+         <h1>Log in</h1>
+         <form class="signup" action="/sessions/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" name="username">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <input type="submit" name="" value="Enter">
+         </form>
+         <a href="/lfs">Back</a>
+      </div>
       <div class="main">
          <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
-            <h1>Log in</h1>
-            <form class="signup" action="/sessions/login" method="post">
-               <label for="username">Username</label>
-               <input type="text" name="username">
-               <label for="password">Password</label>
-               <input type="password" name="password">
-               <input type="submit" name="" value="Enter">
-            </form>
-            <a href="/lfs">Back</a>
+            <h4>Content</h4>
          </div>
       </div>
    </body>
