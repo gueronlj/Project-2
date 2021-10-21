@@ -15,7 +15,7 @@ sessions.post('/login', (req, res) => {
          console.log(error);
          res.send('There was an error retrieving data from the database.')
       } else if (!foundUser) {// maybe no error but maybe no matching username too.
-         res.send(`Username was not found. <a href="/sessions/new">Back</a>`)//make link to go back if nothing found.
+         res.send(`Username was not found. <a href="/sessions/login">Back</a>`)//make link to go back if nothing found.
       } else { //only other option is that usernames matched.
          if(bcrypt.compareSync(req.body.password, foundUser.password)){//check if password matched.
             req.session.currentUser = foundUser//pw match so sync cookie username with foundUser
