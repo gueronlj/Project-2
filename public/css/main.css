@@ -47,7 +47,7 @@ align-items: center;
 
 a {
    text-decoration: none;
-   color: blue;
+   color: black;
 }
 .main {
    display: flex;
@@ -72,12 +72,50 @@ a {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   border-bottom: 1px solid black;
 }
 
-.landing .btn{
+
+.member{
+   display: flex;
+   justify-content: center;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   width: 100%;
+   background-color: black;
+   text-shadow: 1px 1px 1px black;
+}
+
+.member >*{
    margin: 1em;
-   color: blue;
+}
+
+.member h2{
+   margin: 0;
+   font-weight: normal;
+}
+.member a{
+   color:white;
+   border:1px solid white;
+   border-radius: 10px;
+   padding: .7em;
+   transition: .3s;
+   font-size: .6em;
+}
+
+.member a:hover{
+   border: 1px solid rgba(255,255, 255, 0);
+}
+
+#member1:hover {
+   background-color:#bd0f0f;
+}
+
+#member3:hover {
+   background-color:#72d470;
+}
+
+#member2:hover {
+   background-color:#ff7092;
 }
 
 .background{
@@ -97,21 +135,28 @@ a {
    text-align: center;
    margin:.5em;
    text-shadow: 1px 1px 2px black;
+   user-select: none;
 }
 
 .background a{
    color: white;
-   border: 3px solid white;
+   border: 2px solid rgba(255,255, 255, 1);
    border-radius: 10px;
    padding: .5em;
    transition: .3s;
+   font-weight: normal;
+   font-size: .9em;
 }
 
 .background a:hover{
    background-color: #8a1212;
-   border: none;
+   border: 2px solid rgba(255,255, 255, 0);
+   cursor: pointer;
 }
 
+#hire a:hover{
+   background-color:#ff6f00;
+}
 
 #make, #hire{
    display: flex;
@@ -199,6 +244,11 @@ a {
    align-items: baseline;
 }
 
+.card-image{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
 .card-bottom > *{
    margin: .5em;
 }
@@ -209,9 +259,20 @@ a {
 }
 
 .store > *{
-   margin: .5em;
+   margin: 1em;
 }
 
 .low{
    color:red;
+}
+
+.side-menu{
+   position: relative;
+   right: 105px;
+   transition: .8s;
+   user-select: none;
+}
+
+.side-menu.is-active{
+   transform: translateX(105px);
 }

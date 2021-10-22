@@ -3,10 +3,11 @@
    <%- include ('./partials/head.ejs') %>
    <body>
       <header>
-         <nav>
-         </nav>
+         <%- include ('./partials/header.ejs') %>
       </header>
+      <%- include ('./partials/landing.ejs') %>
       <div class="main">
+         <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
             <form class="request" action="/lfs" method="post">
                <label for="name">Name</label>
@@ -22,6 +23,7 @@
                <br>
                <input type="submit" name="" value="Submit">
             </form>
+            <a href="/store">Back</a>
          </div>
       </div>
    </body>

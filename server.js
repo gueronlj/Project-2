@@ -38,6 +38,7 @@ const storeController = require('./controllers/store_controller.js')
 //___________________
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))//allows jquery?
 app.use(express.json());
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 app.use(
@@ -51,13 +52,14 @@ app.use('/lfs', mainController)
 app.use('/users', usersController)
 app.use('/sessions', sessionsController)
 app.use('/store', storeController)
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
 //___________________
 // Routes
 //___________________
 
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.redirect('/lfs')
+  res.redirect('/store')
 });
 //___________________
 //Listener

@@ -1,45 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title></title>
-      <link rel="stylesheet" href="/css/main.css">
-   </head>
+   <%- include ('./partials/head.ejs') %>
    <body>
       <header>
-         <div class="brandname">
-            <h1>Sushi Supply</h1>
-         </div>
-         <nav>
-            <ul>
-               <% if (currentUser){%>
-                  <li>
-                     <form class="button" action="/sessions/logout?_method=DELETE" method="post">
-                        <input type="submit" name="" value="Sign-out">
-                     </form>
-                  </li>
-                  <%} else {%>
-                     <li>
-                        <a href="/sessions/login">Log in</a>
-                     </li>
-                  <%}%>
-               <li>
-                  <a href="/users/registration">Register</a></li>
-            </ul>
-         </nav>
+         <%- include ('./partials/header.ejs') %>
       </header>
+      <%- include ('./partials/landing.ejs') %>
       <div class="main">
-         <div class="side-menu">
-            <h4>Category</h4>
-            <ul>
-               <li>Stuff</li>
-               <li>Doohikies</li>
-               <li>Things</li>
-               <li>Watchacallits</li>
-               <li>Dingdads</li>
-               <li>Thingamajig</li>
-            </ul>
-         </div>
+         <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
             <h1>Your Reservation</h1>
                <div class="details">

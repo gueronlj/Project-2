@@ -71,28 +71,28 @@ lfs.get('/request', (req, res) => {
 })
 
 //------------------------seed-----------------------------
-lfs.get('/seed', (req, res) => {
-   Request.create(
-      [
-         {
-            name: 'Jane Smith',
-            date: '12/12/12',
-            time: '9pm',
-            user: 'UserName',
-            guests: 25,
-            note: 'No shoes in the house, Park on the street',
-            allergies: 'nuts, cucumber'
-         }
-      ], (error, data) => {
-         res.redirect('/lfs')
-         }
-   )
-})
+// lfs.get('/seed', (req, res) => {
+//    Request.create(
+//       [
+//          {
+//             name: 'Jane Smith',
+//             date: '12/12/12',
+//             time: '9pm',
+//             user: 'UserName',
+//             guests: 25,
+//             note: 'No shoes in the house, Park on the street',
+//             allergies: 'nuts, cucumber'
+//          }
+//       ], (error, data) => {
+//          res.redirect('/lfs')
+//          }
+//    )
+// })
 
 //---------------------------index--------------------------
 lfs.get('/', (req, res) => {
    Request.find({}, (error, data) => {
-      res.render('index.ejs', {
+      res.render('store.ejs', {
          requests: data,
          currentUser: req.session.currentUser
       })

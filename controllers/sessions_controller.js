@@ -20,7 +20,7 @@ sessions.post('/login', (req, res) => {
          if(bcrypt.compareSync(req.body.password, foundUser.password)){//check if password matched.
             req.session.currentUser = foundUser//pw match so sync cookie username with foundUser
             console.log('login successful');
-            res.redirect('/lfs')
+            res.redirect('/store')
          } else {
             res.send('Invalid password. <a href="/sessions/login">Back</a>')
          }
@@ -31,7 +31,7 @@ sessions.post('/login', (req, res) => {
 //--------------------log out
 sessions.delete('/logout', (req, res) => {
    req.session.destroy(() => {
-      res.redirect('/lfs')
+      res.redirect('/store')
       console.log('logout successful');
    })
 })

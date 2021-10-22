@@ -13,7 +13,18 @@ const products = require('../models/storeSeed.js')
 //    )
 // })
 
-//--------------show all
+//------------------show specific
+store.get('/details/:id', (req, res) => {
+   Product.findById(req.params.id, (error, data) => {
+      res.render('productShow.ejs', {
+         product: data,
+         currentUser: req.session.currentUser
+      })
+   })
+})
+
+
+//------------------show all
 store.get('/', (req, res) => {
    Product.find({}, (error, data) => {
       res.render('store.ejs', {

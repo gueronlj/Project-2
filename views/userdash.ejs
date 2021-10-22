@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Your reservations</title>
-      <link rel="stylesheet" href="/css/main.css">
-   </head>
+   <%- include ('./partials/head.ejs') %>
    <body>
       <header>
          <%- include ('./partials/header.ejs') %>
       </header>
+      <%- include ('./partials/landing.ejs') %>
       <div class="main">
          <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
@@ -22,7 +19,7 @@
                   </div>
                <% } %>
                <div class="reservation">
-                  <a class="button" id="back" href="/lfs">Back</a>
+                  <a class="button" id="back" href="/store">Back</a>
                </div>
             </div>
          </div>

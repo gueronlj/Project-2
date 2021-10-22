@@ -1,14 +1,17 @@
 <div class="landing">
-   <div class="background">
-      <%if (currentUser) {%>
-         <a class="btn" href="/lfs/request"><h2>Reserve a Chef</h2></a>
-         <a class="btn" href="/lfs/dashboard/<%=currentUser%>"><h2>Check my reservations</h2></a>
+   <%if (currentUser) {%>
+      <div class="member">
+         <a id="member1" href="/lfs/request"><h2>Reserve a Chef</h2></a>
+         <a id="member2" href="/lfs/dashboard/<%=currentUser%>"><h2>Check my reservations</h2></a>
+         <a id="member3" class="shopBtn" href="#"><h2 class ="shopBtn">Shop</h2></a>
+      </div>
       <%} else{%>
+      <div class="background">
          <div id="make">
-            <h2 >"I want to make sushi" </h2><a class"btn" href="/store">Shop</a>
+            <h2 >"I want to make sushi" </h2><h3 class ="shopBtn">Shop</h3>
          </div>
          <div id="hire">
-            <h2 >"I want to hire a pro"</h2><a class"btn" href="/sessions/login">Reserve </a>
+            <h2 >"I want to hire a pro"</h2><a href="/sessions/login"><h3>Reserve</h3></a>
          </div>
       <%}%>
    </div>

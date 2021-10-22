@@ -1,0 +1,27 @@
+<div class="store">
+      <div class="card">
+         <div class="card-top">
+            <h4><%=product.name%></h4>
+         </div>
+         <div class="card-image">
+            <img src="<%= product.img%>" alt="">
+            <p><%= product.description%></p>
+         </div>
+         <div class="card-bottom">
+            <h4 class="price">$<%= product.price%></h4>
+            <h5
+            <% if (product.qty <= 10) {%>
+               class = 'low'
+            <%}%>
+            ><%= product.qty%> available</h5>
+            <% if (product.qty > 0) { %>
+               <form class="" action="/buy/<%= product._id%>?_method=PUT" method="post">
+                  <input type="submit" name="" value="Add to Cart">
+               </form>
+            <% }  else { %>
+                  <h5>Sold out</h5>
+            <% } %>
+         </div>
+         <a href="/store">Back</a>
+      </div>
+</div>
