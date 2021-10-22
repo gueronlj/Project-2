@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title></title>
-      <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="/css/main.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   </head>
+<%- include ('./partials/head.ejs') %>
    <body>
       <header>
    <%- include ('./partials/header.ejs') %>
@@ -19,7 +12,7 @@
                <a class="btn" href="/lfs/dashboard/<%=currentUser%>"><h2>Check my reservations</h2></a>
             <%} else{%>
                <div id="make">
-                  <h2 >"I want to make sushi" </h2><a class"btn" href="/sessions/login">Shop</a>
+                  <h2 >"I want to make sushi" </h2><a class"btn" href="/store">Shop</a>
                </div>
                <div id="hire">
                   <h2 >"I want to hire a pro"</h2><a class"btn" href="/sessions/login">Reserve </a>
