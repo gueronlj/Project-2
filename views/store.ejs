@@ -5,14 +5,7 @@
       <header>
    <%- include ('./partials/header.ejs') %>
       </header>
-      <div class="landing">
-         <%if (currentUser) {%>
-            <a class="btn" href="/lfs/request">Reserve a Chef</a>
-            <a class="btn" href="/lfs/dashboard/<%=currentUser%>">Check my reservations</a>
-         <%} else{%>
-            <p><a href="/users/registration">Register</a> to reserve a chef today. Or <a href="/sessions/login">sign-in</a></p>
-         <%}%>
-      </div>
+      <%- include ('./partials/landing.ejs') %>
       <div class="main">
       <%- include ('./partials/side-menu.ejs') %>
          <div class="content">

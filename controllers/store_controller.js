@@ -4,14 +4,14 @@ const Product = require('../models/product.js')
 const products = require('../models/storeSeed.js')
 
 //---------------seed
-store.get('/seed', (req, res) => {
-   Product.create(
-      products, (error, seed) => {
-         console.log(seed);
-         res.redirect('/lfs')
-      }
-   )
-})
+// store.get('/seed', (req, res) => {
+//    Product.create(
+//       products, (error, seed) => {
+//          console.log(seed);
+//          res.redirect('/lfs')
+//       }
+//    )
+// })
 
 //--------------show all
 store.get('/', (req, res) => {
