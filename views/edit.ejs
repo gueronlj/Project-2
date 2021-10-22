@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="/css/main.css">
-      <title></title>
+      <%- include ('./partials/head.ejs') %>
    </head>
    <body>
       <header>
-         <nav>
-         </nav>
+         <%- include ('./partials/header.ejs') %>
       </header>
+      <%- include ('./partials/landing.ejs') %>
       <div class="main">
+         <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
             <form class="request" action="/lfs/request/<%=request._id%>?_method=PUT" method="post">
                <label for="name">Name</label>
