@@ -2,6 +2,7 @@ const express = require('express')
 const lfs = express.Router()
 const Request = require('../models/request.js')
 
+
 module.exports = lfs
 
 // const isAuthenticated = (req, res, next) => {
@@ -14,7 +15,7 @@ module.exports = lfs
 //----------------------------remove reservation------------------
 lfs.delete('/request/:id', (req, res) => {
    Request.findByIdAndRemove(req.params.id, (error, foundRequest) => {
-      res.redirect('/lfs')
+      res.redirect('/store',)
    })
 })
 
@@ -22,7 +23,7 @@ lfs.delete('/request/:id', (req, res) => {
 lfs.put('/request/:id', (req, res) => {
    Request.findByIdAndUpdate(req.params.id, req.body,
       (error, updated) => {
-         res.redirect('/lfs')
+         res.redirect('/store')
    })
 })
 
@@ -62,7 +63,7 @@ lfs.get('/dashboard/:username', (req, res) => {
 lfs.post('/', (req, res) => {
    req.body.user = req.session.currentUser//add username to their reservation.
    Request.create(req.body, (error, newRequest) => {
-      res.redirect('/lfs')
+      res.redirect('/store')
    })
 })
 

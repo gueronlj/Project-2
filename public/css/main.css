@@ -87,6 +87,7 @@ a {
 
 .member >*{
    margin: 1em;
+   user-select: none;
 }
 
 .member h2{
@@ -106,17 +107,22 @@ a {
    border: 1px solid rgba(255,255, 255, 0);
 }
 
+
+
 #member1:hover {
    background-color:#bd0f0f;
 }
 
 #member3:hover {
    background-color:#72d470;
+   cursor: pointer;
 }
 
 #member2:hover {
    background-color:#ff7092;
 }
+
+
 
 .background{
    background-image: linear-gradient(to bottom, rgba(277,184, 207, 0.1), rgba(0, 0, 0, 0.7)), url("/images/chef-work.jpg");
@@ -152,6 +158,11 @@ a {
    background-color: #8a1212;
    border: 2px solid rgba(255,255, 255, 0);
    cursor: pointer;
+}
+
+.background h3{
+   margin: 0;
+   font-weight: normal;
 }
 
 #hire a:hover{

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-   <head>
-      <%- include ('./partials/head.ejs') %>
-   </head>
+   <%- include ('./partials/head.ejs') %>
    <body>
       <header>
-         <%- include ('./partials/header.ejs') %>
+         <nav>
+         </nav>
       </header>
-      <%- include ('./partials/landing.ejs') %>
       <div class="main">
-         <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
             <form class="request" action="/lfs/request/<%=request._id%>?_method=PUT" method="post">
                <label for="name">Name</label>
