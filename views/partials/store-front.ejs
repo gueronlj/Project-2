@@ -15,7 +15,7 @@
             <%}%>
             ><%= products[i].qty%> available</h5>
             <% if (products[i].qty > 0) { %>
-               <form class="" action="/buy/<%= products[i]._id%>?_method=PUT" method="post">
+               <form class="" action="/store/buy/<%= products[i]._id%>?_method=PUT" method="post">
                   <input type="submit" name="" value="Add to Cart">
                </form>
             <% }  else { %>

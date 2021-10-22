@@ -287,3 +287,11 @@ a {
 .side-menu.is-active{
    transform: translateX(105px);
 }
+
+.cart {
+   font-size: .8em;
+}
+
+.cart h3{
+   text-align: center;
+}

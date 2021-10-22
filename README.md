@@ -1,4 +1,14 @@
 # Project-2
+##technology
+-JQuery
+
+##Issues
+-Ideally everything would stem from the index at /lfs. After the 'store' routes were added, any pages requiring product data from the db had to stem from the /store route. ( /store is the new home page)
+
+-When trying to display the currentUser after login, it appears as  [object Object]!
+
+-the current "landing" div works as intended but needs to be renamed. Its doesn't do what it's name suggests.
+
 ------------------------------------------------------------------------
 //Personal shopping cart must be unique to user.
 //cart should be in db or the items  inside should be in db

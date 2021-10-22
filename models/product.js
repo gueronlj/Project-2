@@ -9,7 +9,8 @@ const productSchema = new mongoose.Schema(
       qty: Number,
       inCart: Boolean,
       cartQty: Number,
-      group: String
+      group: String,
+      owner: String
    }
 )
 
