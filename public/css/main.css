@@ -110,3 +110,43 @@ a {
 .details p{
    margin-top: .4em;
 }
+
+.card img{
+   max-width: 10em;
+
+}
+
+.card{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   max-width: 17em;
+}
+
+.card-top{
+   display: flex;
+   flex-direction: column;
+}
+.card-bottom  {
+   display: flex;
+   flex-direction: row;
+   align-items: baseline;
+}
+
+.card-bottom > *{
+   margin: .5em;
+}
+
+.store{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.store > *{
+   margin: .5em;
+}
+
+.low{
+   color:red;
+}

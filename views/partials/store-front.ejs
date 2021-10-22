@@ -1,0 +1,27 @@
+<div class="store">
+   <% for (let i = 0; i < products.length; i++){ %>
+      <div class="card">
+         <div class="card-top">
+            <a href='/shop/<%=products[i]._id%>'><h4><%=products[i].name%></h4></a>
+         </div>
+         <div class="card-image">
+            <a href='/shop/<%=products[i]._id%>'><img src="<%= products[i].img%>" alt=""></a>
+         </div>
+         <div class="card-bottom">
+            <h4 class="price">$<%= products[i].price%></h4>
+            <h5
+            <% if (products[i].qty <= 10) {%>
+               class = 'low'
+            <%}%>
+            ><%= products[i].qty%> available</h5>
+            <% if (products[i].qty > 0) { %>
+               <form class="" action="/buy/<%= products[i]._id%>?_method=PUT" method="post">
+                  <input type="submit" name="" value="Add to Cart">
+               </form>
+            <% }  else { %>
+                  <h5>Sold out</h5>
+            <% } %>
+         </div>
+      </div>
+   <% } %>
+</div>

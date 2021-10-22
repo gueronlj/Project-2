@@ -8,6 +8,7 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const session = require('express-session')
+
 //___________________
 //Port
 //___________________
@@ -30,6 +31,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 const mainController = require('./controllers/main_controller.js')
 const usersController = require('./controllers/users_controller.js')
 const sessionsController = require('./controllers/sessions_controller.js')
+const storeController = require('./controllers/store_controller.js')
 
 //___________________
 //Middleware
@@ -48,6 +50,7 @@ app.use(
 app.use('/lfs', mainController)
 app.use('/users', usersController)
 app.use('/sessions', sessionsController)
+app.use('/store', storeController)
 //___________________
 // Routes
 //___________________
