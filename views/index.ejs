@@ -3,24 +3,34 @@
    <head>
       <meta charset="utf-8">
       <title></title>
+      <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="/css/main.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    </head>
    <body>
       <header>
    <%- include ('./partials/header.ejs') %>
       </header>
       <div class="landing">
-         <%if (currentUser) {%>
-            <a class="btn" href="/lfs/request">Reserve a Chef</a>
-            <a class="btn" href="/lfs/dashboard/<%=currentUser%>">Check my reservations</a>
-         <%} else{%>
-            <p><a href="/users/registration">Register</a> to reserve a chef today. Or <a href="/sessions/login">sign-in</a></p>
-         <%}%>
+         <div class="background">
+            <%if (currentUser) {%>
+               <a class="btn" href="/lfs/request"><h2>Reserve a Chef</h2></a>
+               <a class="btn" href="/lfs/dashboard/<%=currentUser%>"><h2>Check my reservations</h2></a>
+            <%} else{%>
+               <div id="make">
+                  <h2 >"I want to make sushi" </h2><a class"btn" href="/sessions/login">Shop</a>
+               </div>
+               <div id="hire">
+                  <h2 >"I want to hire a pro"</h2><a class"btn" href="/sessions/login">Reserve </a>
+               </div>
+            <%}%>
+         </div>
       </div>
       <div class="main">
       <%- include ('./partials/side-menu.ejs') %>
          <div class="content">
-            <h1>Content here</h1>
+            <h2></h2>
             <div class="menu">
             </div>
          </div>
