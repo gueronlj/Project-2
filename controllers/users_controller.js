@@ -16,7 +16,7 @@ users.post('/', (req, res) => {
          res.send('Please try a different username or e-mail. <br><a href="/users/registration">Back</a>')
       } else{
          console.log('user added', newUser);
-         res.redirect('/lfs')
+         res.redirect('/store')
       }
    })
 })
