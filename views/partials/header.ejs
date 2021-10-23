@@ -4,7 +4,7 @@
    <nav>
       <ul>
          <% if (currentUser){%>
-            <li><p>Welcome, <%=currentUser%>!</p></li>
+            <li><p>Welcome, <%=currentUser.username%></p></li>
             <li>
                <form class="button" action="/sessions/logout?_method=DELETE" method="post">
                   <input type="submit" name="" value="Sign-out">

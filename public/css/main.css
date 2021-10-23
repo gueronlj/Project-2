@@ -17,7 +17,7 @@ header {
    padding-right: 3%;
 }
 
-.brandname{
+.brandname, header p{
    color: #bd0f0f;
 }
 
@@ -31,8 +31,31 @@ ul {
 }
 
 nav a{
-   color: #bd0f0f;
+   padding: .1em;
+   padding-left: .4em;
+   padding-right: .4em;
+   font-size: .87em;
 }
+
+input[type=submit], nav a{
+   color: #bd0f0f;
+   background-color: white;
+   border: 1px solid #bd0f0f;
+   border-radius: 3px;
+}
+
+
+input[type=submit]:hover{
+   color: white;
+   background-color: #bd0f0f;
+   cursor: pointer;
+}
+
+nav a:hover{
+   color: white;
+   background-color: #bd0f0f;
+}
+
 header li {
    display: inline;
    margin-left: .5em;
@@ -54,18 +77,7 @@ a {
    flex-direction: row;
 }
 
-.side-menu {
-   margin-right: 2%;
-   margin-top: 1.5em;
-}
 
-.side-menu li{
-   margin: .5em;
-}
-
-.side-menu h4{
-   margin: .5em;
-}
 
 .landing {
    display: flex;
@@ -97,7 +109,7 @@ a {
 .member a{
    color:white;
    border:1px solid white;
-   border-radius: 10px;
+   border-radius: 5px;
    padding: .7em;
    transition: .3s;
    font-size: .6em;
@@ -208,7 +220,7 @@ a {
    display: flex;
    align-self: center;
    align-items: baseline;
-   justify-content: flex-end;
+   justify-content: space-between;
 }
 
 .reservation a, .reservation p{
@@ -267,6 +279,7 @@ a {
 .store{
    display: flex;
    flex-wrap: wrap;
+   margin-left: 2em;
 }
 
 .store > *{
@@ -277,17 +290,6 @@ a {
    color:red;
 }
 
-.side-menu{
-   position: relative;
-   right: 105px;
-   transition: .8s;
-   user-select: none;
-}
-
-.side-menu.is-active{
-   transform: translateX(105px);
-}
-
 .cart {
    font-size: .8em;
 }
@@ -295,3 +297,90 @@ a {
 .cart h3{
    text-align: center;
 }
+
+.side-menu{
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   margin-top: 1.5em;
+   position: relative;
+   right:118px;
+   transition: .8s;
+   user-select: none;
+   height: 214px;
+   padding-left: 1em;
+}
+
+.side-menu h4{
+   margin: .5em;
+   margin-left: .9em;
+}
+.side-menu.is-active{
+   transform: translateX(100px);
+}
+
+.side-menu li{
+   margin: .5em;
+   padding: .3em;
+   border-radius: 2px;
+   transition: .2s;
+}
+
+.side-menu a{
+   color: black;
+   font-weight:normal;
+}
+
+#filter1{
+   border-right: 4px solid #bd0f0f;
+}
+#filter2{
+   border-right: 4px solid #ff8e47;
+}
+#filter3{
+   border-right: 4px solid #ffe4de;
+}
+#filter4{
+   border-right: 4px solid #fcd303;
+}
+#filter5{
+   border-right: 4px solid #ffa1a1;
+}
+
+#filter1:hover {
+  background-color: #fc5d5d;
+  transform: translateX(8px);
+}
+#filter2:hover {
+  background-color: #fcb283;
+  transform: translateX(8px);
+}
+#filter3:hover {
+  background-color: #fff0ed;
+  transform: translateX(8px);
+}
+#filter4:hover {
+  background-color: #ffea80;
+  transform: translateX(8px);
+}
+#filter5:hover {
+  background-color:#fcd2d2;
+  transform: translateX(8px);
+}
+
+#filters{
+   margin: 0;
+}
+
+/*
+
+.side-menu li:hover{
+   border-right: 5px solid #72d470;
+   border-top-right-radius: 3px;
+   border-bottom-right-radius: 3px;
+
+}
+
+.side-menu h4{
+   padding-right:.5em;
+} */
