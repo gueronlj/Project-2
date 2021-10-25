@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const express = require('express')
 const sessions = express.Router()
 const User = require('../models/users.js')
+const Cart = require('../models/cart.js')
 
 //------------------login page
 sessions.get('/login', (req, res) => {
@@ -20,21 +21,25 @@ sessions.post('/login', (req, res) => {
          if(bcrypt.compareSync(req.body.password, foundUser.password)){//check if password matched.
             req.session.currentUser = foundUser//pw match so sync cookie username with foundUser
             console.log('login successful');
-            res.redirect('/store')
+            Cart.create( //if login successful create their cart.
+                {
+                    owner: req.body.username,
+                    items:[]
+                }, (error, newCart) => {
+                   if  (error){
+                      console.log('could not create cart');
+                      res.redirect('/store')
+                   } else{
+                      res.redirect('/store')
+                      console.log('cart created');
+                   }
+                }
+            )
          } else {
             res.send('Invalid password. <a href="/sessions/login">Back</a>')
          }
       }
    })
-
-   Cart.create(//**mayeb move into the above conditional
-       {
-           owner: req.session.currentUser,
-           items:[]
-       }, (error, newCart) => {
-           res.redirect('/store')
-       }
-   )
 })
 
 //--------------------log out
