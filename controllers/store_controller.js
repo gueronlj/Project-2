@@ -13,7 +13,7 @@ const products = require('../models/storeSeed.js')
 //    )
 // })
 
-//-------------------remove from cart
+//-----------------------remove from cart
 store.put('/removeCart/:id', (req, res) => {
    Product.findByIdAndUpdate(req.params.id, {cartQty:0}, (error, updatedItem) => {//reset ammount in cart console.log('changed cart qty');
    })
@@ -61,6 +61,53 @@ store.get('/cart', (req, res) => {
       })
    })
 })
+
+//------------------------show by category
+store.get('/knives', (req, res) => {
+    Product.find({group: 'knives'}, (error, data) => {
+        res.render(''),{
+            products:data,
+            currentUser: req.session.currentUser
+        }
+    })
+})
+
+store.get('/books', (req, res) => {
+    Product.find({group: 'books'}, (error, data) => {
+        res.render(''),{
+            products:data,
+            currentUser: req.session.currentUser
+        }
+    })
+})
+
+store.get('/rice', (req, res) => {
+    Product.find({group: 'rice'}, (error, data) => {
+        res.render(''),{
+            products:data,
+            currentUser: req.session.currentUser
+        }
+    })
+})
+
+store.get('/food', (req, res) => {
+    Product.find({group: 'food'}, (error, data) => {
+        res.render(''),{
+            products:data,
+            currentUser: req.session.currentUser
+        }
+    })
+})
+
+store.get('/tools', (req, res) => {
+    Product.find({group: 'tools'}, (error, data) => {
+        res.render(''),{
+            products:data,
+            currentUser: req.session.currentUser
+        }
+    })
+})
+
 //--------------------show specific
 store.get('/details/:id', (req, res) => {
    Product.findById(req.params.id, (error, data) => {

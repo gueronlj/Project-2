@@ -26,6 +26,15 @@ sessions.post('/login', (req, res) => {
          }
       }
    })
+
+   Cart.create(//**mayeb move into the above conditional
+       {
+           owner: req.session.currentUser,
+           items:[]
+       }, (error, newCart) => {
+           res.redirect('/store')
+       }
+   )
 })
 
 //--------------------log out
