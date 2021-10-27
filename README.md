@@ -17,7 +17,7 @@
 
 -The current "landing" div works as intended but needs to be renamed. It doesn't do what the name suggests.
 
--After the cart system was 'upgraded' a user that's not logged in would get an internal server error when trying to add an item to the cart. To get around this, I made a dummy account of 'guest' and have the items added to the 'guest' cart. But they will never see this cart.
+-After the cart system was 'upgraded' a user that's not logged in would get an internal server error when trying to add an item to the cart. To get around this, check if there is a user logged in before adding the item. Ideally there should be a visual que that the user needs to login.
 
 -There can be duplicate items in the cart and they can be removed separately. This is ok but ideally we would check if an item is already in the cart and just increase the cartQty if so.
 ------------------------------------------------------------------------
