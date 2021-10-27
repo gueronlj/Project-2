@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const Product = require('../models/product.js')
 
 const cartSchema = new Schema(
    {
       owner: {type: String, unique: true},
-      items: Array
+      items: [Product.schema]
    }
 )
 
