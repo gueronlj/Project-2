@@ -31,6 +31,7 @@ lfs.get('/request/edit/:id', (req, res) => {
    Request.findById(req.params.id, (error, foundRequest) => {
       res.render('edit.ejs', {
          request:foundRequest,
+         currentUser: req.session.currentUser
       })
    })
 })

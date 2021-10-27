@@ -17,11 +17,11 @@ header {
    padding-right: 3%;
 }
 
-.brandname, header p{
+.brandname a, header p{
    color: #bd0f0f;
 }
 
-header h1{
+.brandname a{
    font-family: 'Permanent Marker', cursive;
 }
 
@@ -30,14 +30,14 @@ ul {
    padding-inline-start: 0;
 }
 
-nav a{
+nav a {
    padding: .1em;
    padding-left: .4em;
    padding-right: .4em;
    font-size: .87em;
 }
 
-input[type=submit], nav a{
+input[type=submit], nav a {
    color: #bd0f0f;
    background-color: white;
    border: 1px solid #bd0f0f;
@@ -372,15 +372,65 @@ a {
    margin: 0;
 }
 
-/*
-
-.side-menu li:hover{
-   border-right: 5px solid #72d470;
-   border-top-right-radius: 3px;
-   border-bottom-right-radius: 3px;
-
+.button {
+   padding: .1em;
+   padding-left: .4em;
+   padding-right: .4em;
+   font-size: .87em;
+   color: #bd0f0f;
+   background-color: white;
+   border: 1px solid #bd0f0f;
+   border-radius: 3px;
 }
 
-.side-menu h4{
-   padding-right:.5em;
-} */
+.button:hover{
+   color: white;
+   background-color: #bd0f0f;
+}
+
+.signup >* {
+   margin-top: .4em;
+   margin-bottom: .4em;
+}
+
+.signup [type=submit]{
+   margin-top: 1em;
+   max-width: 5em;
+   align-self: center;
+   padding-top: .2em;
+}
+
+.landing h1{
+   font-family: 'Permanent Marker', cursive;
+   color: #bd0f0f;
+}
+
+.request {
+   margin-top: 1em;
+}
+
+@media only screen and (max-width: 510px) {
+  header ul {
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+  }
+
+  nav li {
+     margin-bottom: .6em;
+  }
+
+ .card, .card img {
+    max-width: 50%;
+  }
+
+  .store {
+   margin-left: 0;
+   }
+
+   .reservation {
+   max-width: 40%;
+   font-size: .8em;
+   }
+}

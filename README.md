@@ -1,16 +1,27 @@
-# Project-2
-##technology
--JQuery
+##Goals
+-The main 'call to action' should have the user hire a chef for an event, or access resources to help make sushi their self.
+
+-Users need to register to make a reservation and should be able to edit or cancel their reservations
+
+-Users should have a unique shopping cart that saves in between sessions.
+
+-The store should have filters or a search to make items easy to find.
+
+##Components
+-The sliding menu was done with JQuery, in a file called script.js
 
 ##Issues
--Ideally everything would stem from the index at /lfs. After the 'store' routes were added, any pages requiring product data from the db had to stem from the /store route. ( /store is the new home page)
-
--the current "landing" div works as intended but needs to be renamed. Its doesn't do what it's name suggests.
+-The 'main_controllers' are miss-named because they are no longer the main function of the site.
 
 -The store side menu goes away after a category is selected. This could be fixed by always keeping the menu active but I like the sliding animation too much to let it go.
-------------------------------------------------------------------------
--Currently the shopping cart is still fake in that it is not actually unique to each user. It just looks that way. Right now it is possible for items to move from one user's cart to another.
 
+-The current "landing" div works as intended but needs to be renamed. It doesn't do what the name suggests.
+
+-After the cart system was 'upgraded' a user that's not logged in would get an internal server error when trying to add an item to the cart. To get around this, I made a dummy account of 'guest' and have the items added to the 'guest' cart. But they will never see this cart.
+
+-There can be duplicate items in the cart and they can be removed separately. This is ok but ideally we would check if an item is already in the cart and just increase the cartQty if so.
+------------------------------------------------------------------------
+##Cart Notes
 //Personal shopping cart must be unique to user.
 //cart should be in db or the items  inside should be in db
 //cart is an object. a new item goes into an array of objects. can have unique id based off username, maybe price total?

@@ -77,13 +77,24 @@ store.put('/removeCart/:id', (req, res) => {
 
 //-------------------------add to cart
 store.post('/buy/:id', (req, res) => {
-   Cart.find({owner:req.session.currentUser.username}, (error, foundCart) =>{//find the cart we want to update.
-      Product.findById(req.params.id, (error, foundProduct) => {
-         foundCart[0].items.push(foundProduct);//Issue: foundCart.items is 'undefined' **foundCart is an ARRAY**
-         foundCart[0].save()
-         res.redirect('/store')
+   if (req.session.currentUser){//if logged in...
+      Cart.find({owner:req.session.currentUser.username}, (error, foundCart) =>{//find the cart we want to update.
+         Product.findById(req.params.id, (error, foundProduct) => {
+            foundCart[0].items.push(foundProduct);//Issue: foundCart.items is 'undefined' **foundCart is an ARRAY**
+            foundCart[0].save()
+            res.redirect('/store')
+         })
       })
-   })
+   } else { //if not logged in, look for cart of dummy account.
+      Cart.find({owner:'guest'}, (error, foundCart) =>{//find the cart we want to update.
+         Product.findById(req.params.id, (error, foundProduct) => {
+            foundCart[0].items.push(foundProduct);//Issue: foundCart.items is 'undefined' **foundCart is an ARRAY**
+            foundCart[0].save()
+            res.redirect('/store')
+         })
+      })
+   }
+
 })
 
 //-----------------view cart
